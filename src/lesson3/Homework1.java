@@ -15,7 +15,7 @@ public class Homework1 {
             System.out.print(massive[i] + ", ");
         }
 
-        char[] m2 = massive.clone();
+        char[] m2 = massive;
         System.out.print("\n");
         for (int i = m2.length - 1; i >= 0; i--) {
             System.out.print(m2[i] + ", ");

@@ -7,7 +7,7 @@ public class Main1 {
         int tourCost = 20000;
         int money = 10000;
         int monthToTrip = 4;
-        int salary = 2000;
+        int salary = 5000;
 
         int savedMoneyAtThisPeriod = salary * monthToTrip;
         int totalMoneyBeforeTrip = money + savedMoneyAtThisPeriod;

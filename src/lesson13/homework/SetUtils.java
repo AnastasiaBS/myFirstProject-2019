@@ -1,4 +1,4 @@
-package lesson13;
+package lesson13.homework;
 
 import java.util.Collection;
 import java.util.Set;
@@ -17,7 +17,7 @@ public interface SetUtils {
 	 * collection1 - коллекция чисел (Нужно привести каждое число к строковому представлению) и set2 - множество 
 	 * неотсортированных строк
 	 * 
-	 * @param colection1 коллекция чисел
+	 * @param collection1 коллекция чисел
 	 * @param set2 множество неотсортированных строк
 	 * @return отсортированное множество в обратном порядке
 	 * @throws NullPointerException если collection1 или set2 == null
