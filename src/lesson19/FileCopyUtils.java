@@ -1,7 +1,4 @@
-package lesson17.homework;
-
-import lesson17.homework.FileAlreadyExistsException;
-import lesson17.homework.FileCopyFailedException;
+package lesson19;
 
 import java.io.FileNotFoundException;
 

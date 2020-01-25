@@ -2,6 +2,7 @@ package lesson17.homework;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.channels.FileChannel;
 
 public class FileCopyImpl2 implements FileCopyUtils {
@@ -17,8 +18,8 @@ public class FileCopyImpl2 implements FileCopyUtils {
             sourceChannel.close();
             destChannel.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            throw new FileCopyFailedException(e.getMessage(), e);
         }
     }
 }

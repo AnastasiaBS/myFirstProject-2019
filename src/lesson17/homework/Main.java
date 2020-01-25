@@ -16,5 +16,10 @@ public class Main {
 //        String destination = "/D:/Copy.txt";
 //        copyImpl2.copyFile(source, destination);
 
+        FileCopyImpl3 copyImpl3 = new FileCopyImpl3();
+        String source = "/D:/Text.txt";
+        String destination = "/D:/Copy.txt";
+        copyImpl3.copyFile(source, destination);
+
     }
 }

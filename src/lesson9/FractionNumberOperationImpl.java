@@ -5,6 +5,9 @@ public class FractionNumberOperationImpl implements FractionNumberOperation {
 
     @Override
     public FractionNumber add(FractionNumber a, FractionNumber b) throws NullPointerException {
+        if (a == null || b == null) {
+            throw new NullPointerException("Число 1 или число 2 - пусты");
+        }
         int numerator = (a.getDividend() * b.getDivisor()) + (b.getDividend() * a.getDivisor());
         int denominator = a.getDivisor() * b.getDivisor();
         int x = 0;
@@ -26,6 +29,9 @@ public class FractionNumberOperationImpl implements FractionNumberOperation {
 
     @Override
     public FractionNumber sub(FractionNumber a, FractionNumber b) throws NullPointerException {
+        if (a == null || b == null) {
+            throw new NullPointerException("Число 1 или число 2 - пусты");
+        }
         int numeratorSub = (a.getDividend() * b.getDivisor()) - (b.getDividend() * a.getDivisor());
         int denominatorSub = a.getDivisor() * b.getDivisor();
         int y = 0;
@@ -47,6 +53,9 @@ public class FractionNumberOperationImpl implements FractionNumberOperation {
 
     @Override
     public FractionNumber mul(FractionNumber a, FractionNumber b) throws NullPointerException {
+        if (a == null || b == null) {
+            throw new NullPointerException("Число 1 или число 2 - пусты");
+        }
         int numeratorMul = a.getDividend() * b.getDividend();
         int denominatorMul = a.getDivisor() * b.getDivisor();
         int j = 0;
@@ -68,6 +77,12 @@ public class FractionNumberOperationImpl implements FractionNumberOperation {
 
     @Override
     public FractionNumber div(FractionNumber a, FractionNumber b) throws NullPointerException, ArithmeticException {
+        if (a == null || b == null) {
+            throw new NullPointerException("Число 1 или число 2 - пусты");
+        }
+        if (a.getDivisor() == 0 || b.getDivisor() == 0) {
+            throw new ArithmeticException("Деление на 0 запрещено!");
+        }
         int numeratorDiv = a.getDividend() * b.getDivisor();
         int denominatorDiv = a.getDivisor() * b.getDividend();
         int l = 0;

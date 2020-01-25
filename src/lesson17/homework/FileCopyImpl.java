@@ -1,9 +1,6 @@
 package lesson17.homework;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 
 public class FileCopyImpl implements FileCopyUtils {
     @Override
@@ -22,8 +19,8 @@ public class FileCopyImpl implements FileCopyUtils {
             os.flush();
             os.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+           throw new FileCopyFailedException(e.getMessage(), e);
         }
 
     }

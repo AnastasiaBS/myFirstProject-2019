@@ -31,8 +31,13 @@ public class FractionNumberImpl implements FractionNumber {
 
     @Override
     public void setDivisor(int divisor) throws IllegalArgumentException {
+        if (this.divisor == 0) {
+            throw new IllegalArgumentException("Делитель дроби не может быть равен 0!");
+        }
         this.divisor = divisor;
     }
+
+
 
     @Override
     public int getDivisor() {

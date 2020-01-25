@@ -3,8 +3,8 @@ package lesson9;
 public class Main {
     public static void main(String[] args) {
 
-        FractionNumber fractionNumber1 = new FractionNumberImpl(1, 5);
-        FractionNumber fractionNumber2 = new FractionNumberImpl(3, 10);
+        FractionNumber fractionNumber1 = new FractionNumberImpl(0, 0);
+        FractionNumber fractionNumber2 = new FractionNumberImpl(0, 0);
         FractionNumber fractionNumber3 = new FractionNumberImpl(3, 8);
         FractionNumber fractionNumber4 = new FractionNumberImpl(5, 18);
         FractionNumberOperationImpl calc = new FractionNumberOperationImpl();
@@ -16,7 +16,12 @@ public class Main {
         FractionNumber result2 = calc.mul(fractionNumber1, fractionNumber2);
         System.out.println(result2);
         FractionNumber result3 = calc.div(fractionNumber1, fractionNumber2);
-        System.out.println(result3);
+        try {
+            System.out.println(result3);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
 
         FractionNumber result4 = calc.add(fractionNumber3, fractionNumber4);
         System.out.println(result4);
