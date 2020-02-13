@@ -1,8 +1,6 @@
-package lesson17.homework;
+package lesson19.homework;
 
-import lesson17.FileCopy;
-
-import java.io.*;
+import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, FileCopyFailedException {

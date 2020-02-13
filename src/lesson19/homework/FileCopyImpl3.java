@@ -1,12 +1,10 @@
-package lesson17.homework;
+package lesson19.homework;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.channels.FileChannel;
+import java.nio.file.Files;
 
-public class FileCopyImpl2 implements FileCopyUtils {
+public class FileCopyImpl3 implements FileCopyUtils {
     @Override
     public void copyFile(String source, String destination) throws FileCopyFailedException, FileAlreadyExistsException {
         File sour = new File(source);
@@ -15,14 +13,8 @@ public class FileCopyImpl2 implements FileCopyUtils {
         if (dest.exists()) {
             throw new FileAlreadyExistsException("File destination is already exist!");
         }
-
         try {
-            FileChannel sourceChannel = new FileInputStream(source).getChannel();
-            FileChannel destChannel = new FileOutputStream(destination).getChannel();
-            destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
-
-            sourceChannel.close();
-            destChannel.close();
+            Files.copy(sour.toPath(), dest.toPath());
 
         } catch (IOException e) {
             throw new FileCopyFailedException(e.getMessage(), e);

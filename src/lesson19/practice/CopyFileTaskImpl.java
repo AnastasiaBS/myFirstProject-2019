@@ -43,9 +43,18 @@ public class CopyFileTaskImpl extends TaskImpl implements CopyFileTask {
     @Override
     public void execute() throws TaskExecutionFailedException {
         try {
-            this.copyUtils.copyFile(from, to);
+            copyUtils.copyFile(from, to);
         } catch (Exception e) {
             throw new TaskExecutionFailedException(e.getMessage());
         }
+    }
+
+    @Override
+    public String toString() {
+        return "CopyFileTaskImpl{" +
+                "from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", copyUtils=" + copyUtils +
+                '}';
     }
 }
